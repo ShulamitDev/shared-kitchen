@@ -10,3 +10,9 @@ server/__pycache__/
 # Database
 *.sqlite3
 *.db
+
+# Others
+/להגשה- שולמית לקס/
+/פרויקט גמר מתכונים/
+server/uploads/
+
