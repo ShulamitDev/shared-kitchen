@@ -1,0 +1,94 @@
+ /* header.component.css */
+
+.site-header {
+  width: 100%;
+  direction: rtl;
+}
+
+/* אזור הבאנר העליון */
+.top-banner-image {
+ /* height: 120px; /* ניתן להתאמה לפי גובה התמונה שלך */
+  background-color: #f3f2ee; /* תואם לרקע הכללי */
+  border-bottom: 1px solid #c9c7bd;
+}
+
+/* סרגל הניווט */
+.nav-bar {
+  /* background-color: #ffffff;*/
+  border-bottom: 1px solid #c9c7bd; /* תואם למסגרות באתר */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  width: 80%; 
+  justify-content: space-around;
+}
+
+/* עיצוב הקישורים */
+.nav-links a {
+  text-decoration: none;
+  /*color: #4a4a4a; /* צבע טקסט כהה מה-PDF */
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+   color: #929e74 !important;
+  font-weight: bold !important;
+}
+
+/* אפקט הפס התכלת/אפור במעבר עכבר - תואם ל-feature h3::after */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #e2e9eb; /* accent-mist */
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 70%;
+}
+
+
+/* אזור פרטי משתמש */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-right: 20px;
+  border-right: 2px solid #e2e9eb; /* מפריד בצבע Mist */
+}
+
+.welcome-text {
+  font-size: 15.5px;
+  color: #444;
+  font-weight: 600;
+}
+
+/* כפתור התנתקות - סגנון נקי */
+.logout-link {
+  background: none;
+  border: 1px solid #c9c7bd;
+  color: #4a4a4a;
+  padding: 6px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-link:hover {
+  background-color: #f0f2eb;
+  border-color: #a8b28a;
+}

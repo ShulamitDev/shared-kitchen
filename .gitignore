@@ -1,0 +1,12 @@
+# Angular dependencies
+client/node_modules/
+
+# Python virtual environment and cache
+server/venv/
+server/env/
+server/__pycache__/
+*.pyc
+
+# Database
+*.sqlite3
+*.db

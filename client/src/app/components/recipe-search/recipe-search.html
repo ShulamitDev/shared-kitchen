@@ -1,0 +1,37 @@
+<div class="search-container">
+  <h1>חיפוש חכם לפי מצרכים</h1>
+  <p>הכניסי את המצרכים שיש לך בבית, ואנחנו נמצא מה אפשר להכין!</p>
+
+  <div class="search-bar">
+    <input 
+      type="text" 
+      [(ngModel)]="ingredientInput" 
+      (keyup.enter)="addIngredient()" 
+      placeholder="למשל: קמח, ביצים, שוקולד...">
+    <button (click)="addIngredient()">הוסף</button>
+  </div>
+
+  <div class="ingredients-list">
+    <span *ngFor="let ing of ingredientsToSearch; let i = index" class="chip">
+      {{ ing }} <button (click)="removeIngredient(i)">×</button>
+    </span>
+  </div>
+
+  <button class="search-submit" (click)="onSearch()" [disabled]="ingredientsToSearch.length === 0">
+    חפש מתכונים מתאימים
+  </button>
+
+  <hr *ngIf="hasSearched">
+
+  <div class="results-grid" *ngIf="hasSearched">
+    <div *ngFor="let res of results" class="result-card" [routerLink]="['/recipe', res.id]">
+      <div class="score-badge">{{ res.score }}% התאמה</div>
+      <img [src]="serverUrl + '/' + res.image_path" alt="recipe">
+      <h3>{{ res.title }}</h3>
+      <p>סוג: {{ res.recipe_type }} | קושי: {{ res.difficulty }}</p>
+      <button [routerLink]="['/recipe', res.id]">צפה במתכון</button>
+    </div>
+    
+    <p *ngIf="results.length === 0">לא נמצאו מתכונים עם לפחות 20% התאמה.</p>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+# רשימת הספריות שהפרויקט צריך בשביל לרוץ
+flask
+flask-sqlalchemy
+flask-cors
+pillow
+werkzeug
+opencv-python

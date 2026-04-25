@@ -1,0 +1,197 @@
+.add-recipe-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fdfcf9;
+    padding: 30px;
+    border: 1px solid #e0ddd5;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+h1, h2 {
+    color: #556b2f; /* ירוק זית כהה */
+    border-bottom: 2px solid #a8b28a;
+    padding-bottom: 10px;
+}
+
+.form-section {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;    
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #c9c7bd;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.ingredient-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ingredient-row input {
+    flex: 1;
+}
+
+.add-btn {
+    background-color: #a8b28a;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.preview-container img {
+    max-width: 200px;
+    margin-top: 10px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #556b2faf;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.header-input {
+    flex: 3 !important;
+    background-color: #f0f4e8;
+    font-weight: bold;
+    border: 2px dashed #a8b28a !important;
+}
+
+.header-btn {
+    background-color: #556b2f !important;
+    margin-right: 10px;
+}
+
+.add-buttons {
+    margin-top: 15px;
+    display: flex;
+}
+
+ .error-text {
+    color: #c0392b; /* אדום יין עדין */
+    font-size: 13px;
+    margin: 5px 0 10px 0;
+    padding-right: 5px;
+   /*  border-right: 2px solid #c0392b; פס דק בצד להדגשה */
+}
+
+input.ng-invalid.ng-touched, 
+textarea.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+    border: 1px solid #c0392b !important;
+    background-color: #fff8f8; /* רקע ורדרד עדין לשדה השגוי */
+}
+
+
+/* הגדרת השורה עבור שלושת השדות */
+.triple-row {
+    display: flex;
+    gap: 20px; /* רווח בין השדות */
+    margin-bottom: 25px;
+}
+
+.triple-row .form-group {
+    flex: 1; /* מחלק את השטח שווה בשווה בין השלושה */
+    display: flex;
+    flex-direction: column;
+}
+
+.triple-row label {
+    font-size: 0.9rem; /* התאמת גודל קטנה יותר כדי שיכנסו יפה בשורה */
+}
+
+.triple-row input {
+    width: 100%; /* שהאינפוט ימלא את ה-group שלו */
+    box-sizing: border-box;
+}
+
+/* סידור סוג המתכון ורמת הקושי בשורה אחת */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.form-row .form-group {
+    flex: 1; /* מחלק את השטח חצי-חצי */
+    display: flex;
+    flex-direction: column;
+}
+
+/* עיצוב שדות ה-Select שיראו כמו ה-Inputs */
+select {
+    padding: 12px;
+    border: 1px solid #c9c7bd;
+    border-radius: 6px;
+    background-color: white;
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none; /* מבטל את עיצוב ברירת המחדל של הדפדפן */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23556b2f%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 12px top 50%; /* חץ קטן בצד שמאל */
+    background-size: 12px auto;
+}
+
+/* עיצוב קבוצת הצ'קבוקס (אנונימיות) */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f8f3; /* רקע בהיר להדגשה */
+    border-radius: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #556b2f; /* צבע הירוק זית שלך */
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* ביטול המרווח התחתון של הלייבל הרגיל */
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 15px;
+}

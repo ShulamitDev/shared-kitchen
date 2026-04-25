@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="top-banner-image">
+  </div>
+
+  <nav class="nav-bar">
+    <ul class="nav-links">
+      <li><a routerLink="/">דף הבית</a></li>
+      <li><a routerLink="/recipes">גלריית מתכונים</a></li>
+
+      <li><a routerLink="/search">חיפוש לפי מצרכים</a></li>
+
+      <li *ngIf="!isLoggedIn()"><a routerLink="/login">התחברות</a></li>
+      <li *ngIf="!isLoggedIn()"><a routerLink="/register">הרשמה</a></li>
+
+      <li *ngIf="isUploader()"><a routerLink="/add-recipe">הוספת מתכון</a></li>
+      <li *ngIf="isLoggedIn()"><a routerLink="/personal">אזור אישי</a></li>
+      <li *ngIf="isLoggedIn()" class="user-info">
+        <span class="welcome-text">שלום, {{ getUserName() }}</span>
+        <button  (click)="logout()" class="logout-link">התנתק</button>
+      </li>
+    </ul>
+  </nav>
+</header>

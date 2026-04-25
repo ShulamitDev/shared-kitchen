@@ -1,0 +1,196 @@
+/* personal-area.css - עיצוב מאוחד ומקצועי */
+
+.personal-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    direction: rtl;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* כרטיסי מידע ראשיים (פרופיל + באנר שלום) */
+.user-profile-card, .personal-header {
+    background-color: #f6f5ef;
+    border: 2px solid #c9c7bd;
+    padding: 40px;
+    margin-bottom: 30px;
+    position: relative;
+}
+header{
+        border-right: 4px solid #a8b28a !important;
+}
+
+/* שדרוג הפרופיל שייראה מקצועי יותר */
+.user-profile-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-right: 6px solid #a8b28a; /* הדגשת צד בשלן */
+}
+
+.profile-details h2, .personal-header h1, .section-title {
+    font-size: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+/* פס Mist מתחת לכל הכותרות בדף */
+.profile-details h2::after, .personal-header h1::after, .section-title::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    width: 45%;
+    height: 4px;
+    background-color: #e2e9eb; /* accent-mist */
+}
+
+/* באדג' הסטטוס המעוצב */
+/* .status-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #c9c7bd;
+    margin-right: 10px;
+} */
+
+.status-approved {  color: #2e2e2e; }
+.status-pending { color: #d35400; }
+
+/* .accent-line {
+    width: 60px;
+    height: 4px;
+    background-color: #e2e9eb;
+    margin: 20px 0;
+} */
+
+/* גריד המתכונים - שימוש בסגנון ה-feature שלך */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.recipe-item {
+    background-color: #ffffff;
+    border: 1px solid #c9c7bd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.recipe-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.recipe-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #a8b28a;
+    transition: width 0.3s ease;
+}
+
+.recipe-item:hover::after { width: 100%; }
+
+.recipe-img-box { height: 200px; border-bottom: 1px solid #c9c7bd; }
+.recipe-img-box img { width: 100%; height: 100%; object-fit: cover; }
+.recipe-info { padding: 20px; text-align: right; }
+
+/* טבלת ניהול משתמשים - מיושרת ונקייה */
+.admin-management-section {
+    margin-top: 60px;
+    background-color: #f6f5ef;
+    border: 2px solid #c9c7bd;
+    padding: 40px;
+}
+
+.users-table-container {
+    background: #ffffff;
+    border: 1px solid #c9c7bd;
+    margin-top: 25px;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th {
+    background-color: #f0f2eb;
+    padding: 15px;
+    border-bottom: 2px solid #c9c7bd;
+    text-align: right;
+}
+
+.users-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* כפתורי פעולה */
+.cta-primary, .action-btn.view {
+    background-color: #a8b28a;
+    color: white;
+    border: 1px solid #a8b28a;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cta-secondary, .action-btn.delete {
+    background-color: transparent;
+    color: #4a4a4a;
+    border: 1px solid #a8b28a;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.action-btn.delete { border-color: #c9c7bd; color: #e74c3c; }
+
+.cta-primary:hover, .cta-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* פריסת ה-Header לשני צדדים */
+.header-main-layout {
+    display: flex;
+    justify-content: space-between; /* דוחף צד אחד לימין וצד אחד לשמאל */
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.header-text-side {
+    flex: 1; /* לוקח את רוב השטח */
+}
+
+/* עיצוב כרטיס הפרופיל הקטן בצד שמאל */
+.user-profile-card-mini {
+    padding: 20px;
+    min-width: 250px;
+    text-align: right;
+}
+
+.user-profile-card-mini p {
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+
+.mini-btn {
+    margin-top: 10px;
+    padding: 5px 12px;
+    font-size: 0.85em;
+}
